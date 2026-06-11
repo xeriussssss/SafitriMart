@@ -1,0 +1,584 @@
+[2026-06-04 02:25:45] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`kelompok5_6a`.`detail_transaksi`, CONSTRAINT `detail_transaksi_produk_id_foreign` FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`)) (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: kelompok5_6a, SQL: delete from `kategori` where `id` = 9) {"userId":1,"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`kelompok5_6a`.`detail_transaksi`, CONSTRAINT `detail_transaksi_produk_id_foreign` FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`)) (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: kelompok5_6a, SQL: delete from `kategori` where `id` = 9) at D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php:838)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(794): Illuminate/Database/Connection->runQueryCallback('delete from `ka...', Array, Object(Closure))
+#1 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(597): Illuminate/Database/Connection->run('delete from `ka...', Array, Object(Closure))
+#2 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(561): Illuminate/Database/Connection->affectingStatement('delete from `ka...', Array)
+#3 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(4426): Illuminate/Database/Connection->delete('delete from `ka...', Array)
+#4 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1480): Illuminate/Database/Query/Builder->delete()
+#5 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1578): Illuminate/Database/Eloquent/Builder->delete()
+#6 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1510): Illuminate/Database/Eloquent/Model->performDeleteOnModel()
+#7 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Actions/DeleteAction.php(47): Illuminate/Database/Eloquent/Model->delete()
+#8 D:/laragon/www/AutoCommerce/vendor/filament/support/src/Concerns/EvaluatesClosures.php(35): Filament/Tables/Actions/DeleteAction::Filament/Tables/Actions/{closure}(Object(App/Models/Kategori))
+#9 D:/laragon/www/AutoCommerce/vendor/filament/actions/src/Concerns/CanCustomizeProcess.php(23): Filament/Support/Components/Component->evaluate(Object(Closure), Array)
+#10 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Actions/DeleteAction.php(47): Filament/Tables/Actions/DeleteAction->process(Object(Closure))
+#11 D:/laragon/www/AutoCommerce/vendor/filament/support/src/Concerns/EvaluatesClosures.php(35): Filament/Tables/Actions/DeleteAction->Filament/Tables/Actions/{closure}()
+#12 D:/laragon/www/AutoCommerce/vendor/filament/actions/src/MountableAction.php(41): Filament/Support/Components/Component->evaluate(Object(Closure), Array)
+#13 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Actions/Action.php(168): Filament/Actions/MountableAction->call(Array)
+#14 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Concerns/HasActions.php(111): Filament/Tables/Actions/Action->call(Array)
+#15 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Filament/Resources/Pages/ListRecords->callMountedTableAction(Array)
+#16 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#17 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#18 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#19 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Wrapped.php(23): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array)
+#20 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Mechanisms/HandleComponents/HandleComponents.php(515): Livewire/Wrapped->__call('callMountedTabl...', Array)
+#21 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Mechanisms/HandleComponents/HandleComponents.php(124): Livewire/Mechanisms/HandleComponents/HandleComponents->callMethods(Object(App/Filament/Resources/KategoriResource/Pages/ListKategoris), Array, Object(Livewire/Mechanisms/HandleComponents/ComponentContext))
+#22 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/LivewireManager.php(102): Livewire/Mechanisms/HandleComponents/HandleComponents->update(Array, Array, Array)
+#23 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Mechanisms/HandleRequests/HandleRequests.php(144): Livewire/LivewireManager->update(Array, Array, Array)
+#24 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): Livewire/Mechanisms/HandleRequests/HandleRequests->handleUpdate()
+#25 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(265): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(Livewire/Mechanisms/HandleRequests/HandleRequests), 'handleUpdate')
+#26 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(211): Illuminate/Routing/Route->runController()
+#27 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(822): Illuminate/Routing/Route->run()
+#28 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#29 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#30 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#31 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(87): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#32 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#33 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(48): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#34 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#35 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(120): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#36 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#37 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#38 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(36): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#39 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(74): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#41 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#44 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#45 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#46 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#47 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#48 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#49 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php(19): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#50 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Livewire/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(47): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#55 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#56 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#57 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#58 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#59 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#60 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#61 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#62 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#63 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#64 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#65 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#66 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#67 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#68 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#69 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#70 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#71 D:/laragon/www/AutoCommerce/public/index.php(54): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#72 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('D://laragon//www//...')
+#73 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`kelompok5_6a`.`detail_transaksi`, CONSTRAINT `detail_transaksi_produk_id_foreign` FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`)) at D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php:609)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(609): PDOStatement->execute()
+#1 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(827): Illuminate/Database/Connection->Illuminate/Database/{closure}('delete from `ka...', Array)
+#2 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(794): Illuminate/Database/Connection->runQueryCallback('delete from `ka...', Array, Object(Closure))
+#3 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(597): Illuminate/Database/Connection->run('delete from `ka...', Array, Object(Closure))
+#4 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Connection.php(561): Illuminate/Database/Connection->affectingStatement('delete from `ka...', Array)
+#5 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(4426): Illuminate/Database/Connection->delete('delete from `ka...', Array)
+#6 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1480): Illuminate/Database/Query/Builder->delete()
+#7 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1578): Illuminate/Database/Eloquent/Builder->delete()
+#8 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1510): Illuminate/Database/Eloquent/Model->performDeleteOnModel()
+#9 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Actions/DeleteAction.php(47): Illuminate/Database/Eloquent/Model->delete()
+#10 D:/laragon/www/AutoCommerce/vendor/filament/support/src/Concerns/EvaluatesClosures.php(35): Filament/Tables/Actions/DeleteAction::Filament/Tables/Actions/{closure}(Object(App/Models/Kategori))
+#11 D:/laragon/www/AutoCommerce/vendor/filament/actions/src/Concerns/CanCustomizeProcess.php(23): Filament/Support/Components/Component->evaluate(Object(Closure), Array)
+#12 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Actions/DeleteAction.php(47): Filament/Tables/Actions/DeleteAction->process(Object(Closure))
+#13 D:/laragon/www/AutoCommerce/vendor/filament/support/src/Concerns/EvaluatesClosures.php(35): Filament/Tables/Actions/DeleteAction->Filament/Tables/Actions/{closure}()
+#14 D:/laragon/www/AutoCommerce/vendor/filament/actions/src/MountableAction.php(41): Filament/Support/Components/Component->evaluate(Object(Closure), Array)
+#15 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Actions/Action.php(168): Filament/Actions/MountableAction->call(Array)
+#16 D:/laragon/www/AutoCommerce/vendor/filament/tables/src/Concerns/HasActions.php(111): Filament/Tables/Actions/Action->call(Array)
+#17 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Filament/Resources/Pages/ListRecords->callMountedTableAction(Array)
+#18 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#19 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#20 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#21 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Wrapped.php(23): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array)
+#22 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Mechanisms/HandleComponents/HandleComponents.php(515): Livewire/Wrapped->__call('callMountedTabl...', Array)
+#23 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Mechanisms/HandleComponents/HandleComponents.php(124): Livewire/Mechanisms/HandleComponents/HandleComponents->callMethods(Object(App/Filament/Resources/KategoriResource/Pages/ListKategoris), Array, Object(Livewire/Mechanisms/HandleComponents/ComponentContext))
+#24 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/LivewireManager.php(102): Livewire/Mechanisms/HandleComponents/HandleComponents->update(Array, Array, Array)
+#25 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Mechanisms/HandleRequests/HandleRequests.php(144): Livewire/LivewireManager->update(Array, Array, Array)
+#26 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): Livewire/Mechanisms/HandleRequests/HandleRequests->handleUpdate()
+#27 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(265): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(Livewire/Mechanisms/HandleRequests/HandleRequests), 'handleUpdate')
+#28 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(211): Illuminate/Routing/Route->runController()
+#29 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(822): Illuminate/Routing/Route->run()
+#30 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#31 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#32 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#33 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(87): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#34 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#35 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(48): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#36 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#37 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(120): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#38 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#39 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(36): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#41 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(74): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#45 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#46 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#47 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#48 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#49 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#50 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#51 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php(19): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Livewire/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#54 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#55 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(47): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#56 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#57 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#58 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#59 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#60 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#61 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#62 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#63 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#64 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#65 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#66 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#67 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#68 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#69 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#70 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#71 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#72 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#73 D:/laragon/www/AutoCommerce/public/index.php(54): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#74 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('D://laragon//www//...')
+#75 {main}
+"} 
+[2026-06-06 08:47:12] local.ERROR: syntax error, unexpected end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected end of file at D:/laragon/www/AutoCommerce/app/Http/Controllers/CheckoutController.php:231)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce/vendor/composer/ClassLoader.php(427): Composer/Autoload/{closure}('D://laragon//www//...')
+#1 [internal function]: Composer/Autoload/ClassLoader->loadClass('App//Http//Contro...')
+#2 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(1125): is_a('App//Http//Contro...', 'Illuminate//Rout...', true)
+#3 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(1062): Illuminate/Routing/Route->controllerMiddleware()
+#4 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(834): Illuminate/Routing/Route->gatherMiddleware()
+#5 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(816): Illuminate/Routing/Router->gatherRouteMiddleware(Object(Illuminate/Routing/Route))
+#6 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#7 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#8 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#9 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#10 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#11 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php(19): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#12 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Livewire/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware->handle(Object(Illuminate/Http/Request), Object(Closure))
+#13 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#14 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#15 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#16 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#17 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#18 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#19 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#20 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#22 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#24 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#25 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#26 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#28 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#30 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#31 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#32 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#33 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#34 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#35 D:/laragon/www/AutoCommerce/public/index.php(54): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#36 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('D://laragon//www//...')
+#37 {main}
+"} 
+[2026-06-06 08:49:55] local.ERROR: There are no commands defined in the "log" namespace.
+
+Did you mean this?
+    activitylog {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"log\" namespace.
+
+Did you mean this?
+    activitylog at D:/laragon/www/AutoCommerce/vendor/symfony/console/Application.php:694)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce/vendor/symfony/console/Application.php(743): Symfony/Component/Console/Application->findNamespace('log')
+#1 D:/laragon/www/AutoCommerce/vendor/symfony/console/Application.php(298): Symfony/Component/Console/Application->find('log:clear')
+#2 D:/laragon/www/AutoCommerce/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#3 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#4 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#5 D:/laragon/www/AutoCommerce/artisan(16): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#6 {main}
+"} 
+[2026-06-06 08:53:25] local.ERROR: Trait "Filament\Notifications\HasDatabaseNotifications" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Filament\\Notifications\\HasDatabaseNotifications\" not found at D:/laragon/www/AutoCommerce/app/Models/User.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-06 08:53:41] local.ERROR: Trait "Filament\Notifications\HasDatabaseNotifications" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Filament\\Notifications\\HasDatabaseNotifications\" not found at D:/laragon/www/AutoCommerce/app/Models/User.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-06 08:53:49] local.ERROR: Trait "Filament\Notifications\HasDatabaseNotifications" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Filament\\Notifications\\HasDatabaseNotifications\" not found at D:/laragon/www/AutoCommerce/app/Models/User.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-06 08:54:19] local.ERROR: Trait "Filament\Notifications\HasDatabaseNotifications" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Filament\\Notifications\\HasDatabaseNotifications\" not found at D:/laragon/www/AutoCommerce/app/Models/User.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-07 07:55:53] local.ERROR: Command "cache:clearphp" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    cache:forget
+    cache:prune-stale-tags
+    cache:table {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"cache:clearphp\" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    cache:forget
+    cache:prune-stale-tags
+    cache:table at D:/laragon/www/AutoCommerce/vendor/symfony/console/Application.php:759)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce/vendor/symfony/console/Application.php(298): Symfony/Component/Console/Application->find('cache:clearphp')
+#1 D:/laragon/www/AutoCommerce/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#2 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#3 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#4 D:/laragon/www/AutoCommerce/artisan(16): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#5 {main}
+"} 
+[2026-06-07 07:56:47] local.ERROR: cURL error 6: Could not resolve host: shipping.komerce.id (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://shipping.komerce.id/api/v1/destination/search?name=jakarta {"userId":1,"exception":"[object] (Illuminate\\Http\\Client\\ConnectionException(code: 0): cURL error 6: Could not resolve host: shipping.komerce.id (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://shipping.komerce.id/api/v1/destination/search?name=jakarta at D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php:1805)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1081): Illuminate/Http/Client/PendingRequest->marshalConnectionException(Object(GuzzleHttp/Exception/ConnectException))
+#1 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate/Http/Client/PendingRequest->Illuminate/Http/Client/{closure}(1)
+#2 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1041): retry(0, Object(Closure), 100, Object(Closure))
+#3 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(849): Illuminate/Http/Client/PendingRequest->send('GET', 'https://shippin...', Array)
+#4 D:/laragon/www/AutoCommerce/app/Http/Controllers/OngkirController.php(27): Illuminate/Http/Client/PendingRequest->get('https://shippin...', Array)
+#5 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): App/Http/Controllers/OngkirController->searchDestination(Object(Illuminate/Http/Request))
+#6 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(265): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/OngkirController), 'searchDestinati...')
+#7 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(211): Illuminate/Routing/Route->runController()
+#8 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(822): Illuminate/Routing/Route->run()
+#9 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#10 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#11 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#12 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(63): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#13 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#14 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(87): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#15 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#16 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(48): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#17 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#18 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(120): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#19 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#20 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#21 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(36): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#22 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#23 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(74): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#24 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#25 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#26 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#27 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#28 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#29 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#30 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#31 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#32 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php(19): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#33 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Livewire/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#35 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#37 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#38 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#39 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#41 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#44 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#45 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#46 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#47 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#48 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#49 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#50 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#51 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#52 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#53 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#54 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#55 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#56 D:/laragon/www/AutoCommerce/public/index.php(54): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#57 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('D://laragon//www//...')
+#58 {main}
+
+[previous exception] [object] (GuzzleHttp\\Exception\\ConnectException(code: 0): cURL error 6: Could not resolve host: shipping.komerce.id (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://shipping.komerce.id/api/v1/destination/search?name=jakarta at D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:277)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(207): GuzzleHttp/Handler/CurlFactory::createRejection(Object(GuzzleHttp/Handler/EasyHandle), Array)
+#1 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(159): GuzzleHttp/Handler/CurlFactory::finishError(Object(GuzzleHttp/Handler/CurlHandler), Object(GuzzleHttp/Handler/EasyHandle), Object(GuzzleHttp/Handler/CurlFactory))
+#2 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(47): GuzzleHttp/Handler/CurlFactory::finish(Object(GuzzleHttp/Handler/CurlHandler), Object(GuzzleHttp/Handler/EasyHandle), Object(GuzzleHttp/Handler/CurlFactory))
+#3 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp/Handler/CurlHandler->__invoke(Object(GuzzleHttp/Psr7/Request), Array)
+#4 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(48): GuzzleHttp/Handler/Proxy::GuzzleHttp/Handler/{closure}(Object(GuzzleHttp/Psr7/Request), Array)
+#5 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1523): GuzzleHttp/Handler/Proxy::GuzzleHttp/Handler/{closure}(Object(GuzzleHttp/Psr7/Request), Array)
+#6 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1480): Illuminate/Http/Client/PendingRequest->Illuminate/Http/Client/{closure}(Object(GuzzleHttp/Psr7/Request), Array)
+#7 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1466): Illuminate/Http/Client/PendingRequest->Illuminate/Http/Client/{closure}(Object(GuzzleHttp/Psr7/Request), Array)
+#8 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(35): Illuminate/Http/Client/PendingRequest->Illuminate/Http/Client/{closure}(Object(GuzzleHttp/Psr7/Request), Array)
+#9 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Middleware.php(38): GuzzleHttp/PrepareBodyMiddleware->__invoke(Object(GuzzleHttp/Psr7/Request), Array)
+#10 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(71): GuzzleHttp/Middleware::GuzzleHttp/{closure}(Object(GuzzleHttp/Psr7/Request), Array)
+#11 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Middleware.php(63): GuzzleHttp/RedirectMiddleware->__invoke(Object(GuzzleHttp/Psr7/Request), Array)
+#12 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/HandlerStack.php(75): GuzzleHttp/Middleware::GuzzleHttp/{closure}(Object(GuzzleHttp/Psr7/Request), Array)
+#13 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Client.php(333): GuzzleHttp/HandlerStack->__invoke(Object(GuzzleHttp/Psr7/Request), Array)
+#14 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Client.php(169): GuzzleHttp/Client->transfer(Object(GuzzleHttp/Psr7/Request), Array)
+#15 D:/laragon/www/AutoCommerce/vendor/guzzlehttp/guzzle/src/Client.php(189): GuzzleHttp/Client->requestAsync('GET', Object(GuzzleHttp/Psr7/Uri), Array)
+#16 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1306): GuzzleHttp/Client->request('GET', 'https://shippin...', Array)
+#17 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1043): Illuminate/Http/Client/PendingRequest->sendRequest('GET', 'https://shippin...', Array)
+#18 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Support/helpers.php(328): Illuminate/Http/Client/PendingRequest->Illuminate/Http/Client/{closure}(1)
+#19 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(1041): retry(0, Object(Closure), 100, Object(Closure))
+#20 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php(849): Illuminate/Http/Client/PendingRequest->send('GET', 'https://shippin...', Array)
+#21 D:/laragon/www/AutoCommerce/app/Http/Controllers/OngkirController.php(27): Illuminate/Http/Client/PendingRequest->get('https://shippin...', Array)
+#22 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(46): App/Http/Controllers/OngkirController->searchDestination(Object(Illuminate/Http/Request))
+#23 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(265): Illuminate/Routing/ControllerDispatcher->dispatch(Object(Illuminate/Routing/Route), Object(App/Http/Controllers/OngkirController), 'searchDestinati...')
+#24 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Route.php(211): Illuminate/Routing/Route->runController()
+#25 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(822): Illuminate/Routing/Route->run()
+#26 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Routing/Router->Illuminate/Routing/{closure}(Object(Illuminate/Http/Request))
+#27 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#28 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Routing/Middleware/SubstituteBindings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(63): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#30 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Auth/Middleware/Authenticate->handle(Object(Illuminate/Http/Request), Object(Closure))
+#31 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(87): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#32 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/VerifyCsrfToken->handle(Object(Illuminate/Http/Request), Object(Closure))
+#33 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(48): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#34 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/View/Middleware/ShareErrorsFromSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#35 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(120): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#36 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate/Session/Middleware/StartSession->handleStatefulRequest(Object(Illuminate/Http/Request), Object(Illuminate/Session/Store), Object(Closure))
+#37 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Session/Middleware/StartSession->handle(Object(Illuminate/Http/Request), Object(Closure))
+#38 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(36): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#39 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(74): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#41 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Cookie/Middleware/EncryptCookies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#43 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#44 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#45 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#46 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#47 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#48 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->Illuminate/Foundation/Http/{closure}(Object(Illuminate/Http/Request))
+#49 D:/laragon/www/AutoCommerce/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php(19): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#50 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Livewire/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware->handle(Object(Illuminate/Http/Request), Object(Closure))
+#51 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#52 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#53 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#54 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#55 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#56 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#57 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#58 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#59 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#60 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#61 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#62 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#63 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#64 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#65 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#66 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#67 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#68 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#69 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->Illuminate/Pipeline/{closure}(Object(Illuminate/Http/Request))
+#70 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#71 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#72 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#73 D:/laragon/www/AutoCommerce/public/index.php(54): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#74 D:/laragon/www/AutoCommerce/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('D://laragon//www//...')
+#75 {main}
+"} 
+[2026-06-09 03:29:35] local.ERROR: Midtrans Snap Token Error: Midtrans API is returning API error. HTTP status code: 401 API response: {"error_messages":["Access denied due to unauthorized transaction, please check client or server key","Visit https://docs.midtrans.com/reference/backend-integration for more details"]} {"transaksi_id":24} 
+[2026-06-09 03:31:11] local.ERROR: Midtrans Snap Token Error: Midtrans API is returning API error. HTTP status code: 401 API response: {"error_messages":["Access denied due to unauthorized transaction, please check client or server key","Visit https://docs.midtrans.com/reference/backend-integration for more details"]} {"transaksi_id":25} 
+[2026-06-09 03:48:01] local.INFO: Midtrans Config Check {"server_key_prefix":"SB-Mid-server-R...","is_production":false,"order_id":"ORDER-1-1780976880","total_bayar":"59000.00"} 
+[2026-06-09 03:48:01] local.ERROR: Midtrans Snap Token Error {"message":"Midtrans API is returning API error. HTTP status code: 401 API response: {\"error_messages\":[\"Access denied due to unauthorized transaction, please check client or server key\",\"Visit https://docs.midtrans.com/reference/backend-integration for more details\"]}","transaksi_id":26,"order_id":"ORDER-1-1780976880","total_bayar":"59000.00","trace":"#0 D:\\laragon\\www\\AutoCommerce-main\\vendor\\midtrans\\midtrans-php\\Midtrans\\ApiRequestor.php(39): Midtrans\\ApiRequestor::remoteCall('https://app.san...', 'SB-Mid-server-R...', Array, 'POST')
+#1 D:\\laragon\\www\\AutoCommerce-main\\vendor\\midtrans\\midtrans-php\\Midtrans\\Snap.php(108): Midtrans\\ApiRequestor::post('https://app.san...', 'SB-Mid-server-R...', Array)
+#2 D:\\laragon\\www\\AutoCommerce-main\\vendor\\midtrans\\midtrans-php\\Midtrans\\Snap.php(36): Midtrans\\Snap::createTransaction(Array)
+#3 D:\\laragon\\www\\AutoCommerce-main\\app\\Http\\Controllers\\CheckoutController.php(343): Midtrans\\Snap::getSnapToken(Array)
+#4 D:\\laragon\\www\\AutoCommerce-main\\app\\Http\\Controllers\\CheckoutController.php(253): App\\Http\\Controllers\\CheckoutController->generateSnapToken(Object(App\\Models\\Transaksi))
+#5 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(46): App\\Http\\Controllers\\CheckoutController->store(Object(Illuminate\\Http\\Request))
+#6 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(265): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\CheckoutController), 'store')
+#7 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(211): Illuminate\\Routing\\Route->runController()
+#8 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(822): Illuminate\\Routing\\Route->run()
+#9 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(87): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(120): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#20 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(36): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(74): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(821): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#27 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(800): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#28 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(764): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#29 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(753): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#30 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#31 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#32 D:\\laragon\\www\\AutoCommerce-main\\vendor\\livewire\\livewire\\src\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(61): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#54 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#55 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#56 D:\\laragon\\www\\AutoCommerce-main\\public\\index.php(54): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#57 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('D:\\\\laragon\\\\www\\\\...')
+#58 {main}"} 
+[2026-06-09 03:50:22] local.INFO: Midtrans Config Check {"server_key_prefix":"SB-Mid-server-R...","is_production":false,"order_id":"ORDER-1-1780977022","total_bayar":"64000.00"} 
+[2026-06-09 03:50:22] local.ERROR: Midtrans Snap Token Error {"message":"Midtrans API is returning API error. HTTP status code: 401 API response: {\"error_messages\":[\"Access denied due to unauthorized transaction, please check client or server key\",\"Visit https://docs.midtrans.com/reference/backend-integration for more details\"]}","transaksi_id":27,"order_id":"ORDER-1-1780977022","total_bayar":"64000.00","trace":"#0 D:\\laragon\\www\\AutoCommerce-main\\vendor\\midtrans\\midtrans-php\\Midtrans\\ApiRequestor.php(39): Midtrans\\ApiRequestor::remoteCall('https://app.san...', 'SB-Mid-server-R...', Array, 'POST')
+#1 D:\\laragon\\www\\AutoCommerce-main\\vendor\\midtrans\\midtrans-php\\Midtrans\\Snap.php(108): Midtrans\\ApiRequestor::post('https://app.san...', 'SB-Mid-server-R...', Array)
+#2 D:\\laragon\\www\\AutoCommerce-main\\vendor\\midtrans\\midtrans-php\\Midtrans\\Snap.php(36): Midtrans\\Snap::createTransaction(Array)
+#3 D:\\laragon\\www\\AutoCommerce-main\\app\\Http\\Controllers\\CheckoutController.php(343): Midtrans\\Snap::getSnapToken(Array)
+#4 D:\\laragon\\www\\AutoCommerce-main\\app\\Http\\Controllers\\CheckoutController.php(253): App\\Http\\Controllers\\CheckoutController->generateSnapToken(Object(App\\Models\\Transaksi))
+#5 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(46): App\\Http\\Controllers\\CheckoutController->store(Object(Illuminate\\Http\\Request))
+#6 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(265): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\CheckoutController), 'store')
+#7 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(211): Illuminate\\Routing\\Route->runController()
+#8 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(822): Illuminate\\Routing\\Route->run()
+#9 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(87): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(120): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#20 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(36): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(74): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(821): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#27 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(800): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#28 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(764): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#29 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(753): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#30 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#31 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#32 D:\\laragon\\www\\AutoCommerce-main\\vendor\\livewire\\livewire\\src\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware.php(19): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(61): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(219): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#54 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#55 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#56 D:\\laragon\\www\\AutoCommerce-main\\public\\index.php(54): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#57 D:\\laragon\\www\\AutoCommerce-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('D:\\\\laragon\\\\www\\\\...')
+#58 {main}"} 
+[2026-06-09 03:55:23] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1780977323","total_bayar":"64000.00"} 
+[2026-06-09 03:55:24] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":28,"order_id":"ORDER-1-1780977323"} 
+[2026-06-09 04:04:07] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1780977847","total_bayar":"17000.00"} 
+[2026-06-09 04:04:08] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":29,"order_id":"ORDER-1-1780977847"} 
+[2026-06-09 04:07:08] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1780978028","total_bayar":"12500.00"} 
+[2026-06-09 04:07:08] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":30,"order_id":"ORDER-1-1780978028"} 
+[2026-06-09 06:27:16] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1780986436","total_bayar":"20000.00"} 
+[2026-06-09 06:27:17] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":31,"order_id":"ORDER-1-1780986436"} 
+[2026-06-09 06:29:42] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1780986582","total_bayar":"52500.00"} 
+[2026-06-09 06:29:42] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":32,"order_id":"ORDER-1-1780986582"} 
+[2026-06-09 06:48:48] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1780987728","total_bayar":"57000.00"} 
+[2026-06-09 06:48:49] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":33,"order_id":"ORDER-1-1780987728"} 
+[2026-06-09 06:50:53] local.ERROR: There are no commands defined in the "log" namespace.
+
+Did you mean this?
+    activitylog {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"log\" namespace.
+
+Did you mean this?
+    activitylog at D:/laragon/www/AutoCommerce-main/vendor/symfony/console/Application.php:694)
+[stacktrace]
+#0 D:/laragon/www/AutoCommerce-main/vendor/symfony/console/Application.php(743): Symfony/Component/Console/Application->findNamespace('log')
+#1 D:/laragon/www/AutoCommerce-main/vendor/symfony/console/Application.php(298): Symfony/Component/Console/Application->find('log:tail')
+#2 D:/laragon/www/AutoCommerce-main/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#3 D:/laragon/www/AutoCommerce-main/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#4 D:/laragon/www/AutoCommerce-main/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#5 D:/laragon/www/AutoCommerce-main/artisan(16): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#6 {main}
+"} 
+[2026-06-09 06:53:28] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1780988008","total_bayar":"45000.00"} 
+[2026-06-09 06:53:28] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":34,"order_id":"ORDER-1-1780988008"} 
+[2026-06-09 06:53:55] local.INFO: Midtrans Callback Sukses {"order_id":"ORDER-1-1780988008","status":"capture","new_status":"diproses"} 
+[2026-06-09 06:58:18] local.INFO: Midtrans Callback Sukses {"order_id":"ORDER-1-1780987728","status":"capture","new_status":"diproses"} 
+[2026-06-09 15:22:07] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1781018527","total_bayar":"97000.00"} 
+[2026-06-09 15:22:08] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":40,"order_id":"ORDER-1-1781018527"} 
+[2026-06-09 16:08:10] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1781021290","total_bayar":"24000.00"} 
+[2026-06-09 16:08:10] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":41,"order_id":"ORDER-1-1781021290"} 
+[2026-06-09 17:03:45] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-6-1781024606"} 
+[2026-06-09 17:05:59] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-6-1781024606"} 
+[2026-06-09 17:13:56] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-6-1781024606"} 
+[2026-06-09 17:19:46] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-6-1781024606"} 
+[2026-06-09 17:22:00] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-6-1781024606"} 
+[2026-06-09 17:30:01] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-6-1781024606"} 
+[2026-06-09 17:58:49] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781027881"} 
+[2026-06-09 18:01:05] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781027881"} 
+[2026-06-09 18:03:17] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028193"} 
+[2026-06-09 18:04:38] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781027881"} 
+[2026-06-09 18:04:45] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028193"} 
+[2026-06-09 18:07:09] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028342"} 
+[2026-06-09 18:08:00] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028342"} 
+[2026-06-09 18:13:11] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028193"} 
+[2026-06-09 18:14:13] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028342"} 
+[2026-06-09 18:14:50] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781027881"} 
+[2026-06-09 18:15:50] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781027881"} 
+[2026-06-09 18:19:20] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028193"} 
+[2026-06-09 18:20:07] local.INFO: Midtrans Config Check {"server_key_prefix":"Mid-server-ZaSE...","is_production":false,"order_id":"ORDER-1-1781029207","total_bayar":"49000.00"} 
+[2026-06-09 18:20:08] local.INFO: Midtrans Snap Token berhasil dibuat {"transaksi_id":42,"order_id":"ORDER-1-1781029207"} 
+[2026-06-09 18:20:34] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028193"} 
+[2026-06-09 18:20:37] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781027881"} 
+[2026-06-09 18:21:06] local.INFO: Midtrans Callback Sukses {"order_id":"ORDER-1-1781029207","status":"deny","new_status":"dibatalkan"} 
+[2026-06-09 18:22:01] local.INFO: Midtrans Callback Sukses {"order_id":"ORDER-1-1781029207","status":"capture","new_status":"diproses"} 
+[2026-06-09 18:23:13] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781028193"} 
+[2026-06-09 18:26:48] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781029550"} 
+[2026-06-09 18:27:33] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781029550"} 
+[2026-06-09 18:32:52] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781029550"} 
+[2026-06-09 18:40:57] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781030441"} 
+[2026-06-09 18:42:03] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781030441"} 
+[2026-06-09 18:48:04] local.WARNING: Midtrans Callback: Transaksi tidak ditemukan {"order_id":"ORDER-1-1781030441"} 
+[2026-06-10 08:57:40] local.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at D:/laragon/www/AutoCommerce-LaravelCloud/AutoCommerce-main/app/Filament/Resources/ProdukResource.php:3)
+[stacktrace]
+#0 {main}
+"} 
